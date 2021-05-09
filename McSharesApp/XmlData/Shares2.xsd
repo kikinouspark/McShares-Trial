@@ -1,0 +1,72 @@
+
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RequestDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="Doc_Date"/>
+        <xs:element type="xs:string" name="Doc_Ref"/>
+        <xs:element name="Doc_Data">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DataItem_Customer" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="customer_id"/>
+                    <xs:element type="xs:string" name="Customer_Type"/>
+                    <xs:element type="xs:string" name="Date_Of_Birth">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+							<xs:minInclusive value="01/02/1900"/>
+							<xs:maxInclusive value="01/02/2003"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:complexType>
+                    <xs:element type="xs:string" name="Date_Incorp"/>
+                    <xs:element type="xs:string" name="REGISTRATION_NO" minOccurs="0"/>
+                    <xs:element type="xs:string" name="Registration_No" minOccurs="0"/>
+                    <xs:element name="Mailing_Address">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="Address_Line1"/>
+                          <xs:element type="xs:string" name="Address_Line2"/>
+                          <xs:element type="xs:string" name="Town_City"/>
+                          <xs:element type="xs:string" name="Country"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Contact_Details">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="Contact_Name"/>
+                          <xs:element type="xs:string" name="Contact_Number"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Shares_Details">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:int" name="Num_Shares"/>
+                          <xs:element type="xs:positiveDecimal" name="Share_Price">
+						  		<xs:simpleType name="positiveDecimal">
+									<xs:restriction base="xs:decimal">
+										<xs:minExclusive value="0"/>
+										<xs:fractionDigits value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+						  </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+  <xs:element name="RequestDoc"> <!-- root element will be <customer> -->
+        <xs:complexType> <!-- it will be complex (there are complex and simple) -->
+            <xs:sequence> <!-- it will consists from sequence of other elements -->
+                <xs:element name="RequestDoc" minOccurs="0" maxOccurs="unbounded"> <!-- there will be zero or more <item> elements in sequence -->
+                    <xs:complexType> <!-- they all have complex type -->
+                        <xs:sequence> <!-- each of them will have next sequence of elements -->
+							<xs:all>
+								<xs:element type="xs:integer" name="customer_id"/>
+								<xs:element type="xs:NonEmptyString" name="Customer_Type"/>
+								<xs:element type="xs:NonEmptyString" name="Date_Incorp"/>
+								<xs:element type="xs:NonEmptyString" name="REGISTRATION_NO"/>
+								<xs:element type="xs:NonEmptyString" name="Address_Line1"/>
+								<xs:element type="xs:NonEmptyString" name="Address_Line2"/>  
+								<xs:element type="xs:NonEmptyString" name="Town_City"/>
+								<xs:element type="xs:NonEmptyString" name="Country"/>
+								<xs:element type="xs:NonEmptyString" name="Contact_Name"/>
+								<xs:element type="xs:NonEmptyString" name="Contact_Number"/>
+								<xs:element type="xs:integer" name="Num_Shares"/>
+								<xs:element type="xs:NonEmptyString" name="Date_Of_Birth">
+									<xs:simpleType>
+										<xs:restriction base="xs:string"/>
+										<xs:minInclusive value="01/02/1900"/>
+										<xs:maxInclusive value="01/02/2003"/>
+										<xs:restriction>
+									<xs:simpleType>
+								<xs:element>
+								<xs:element type="xs:positiveDecimal" name="Share_Price">
+								<xs:simpleType/>
+										<xs:restriction base="xs:positiveDecimal">
+										<xs:minInclusive value="1.00"/>
+										<xs:restriction>
+								<xs:simpleType>
+								<xs:element>
+							<xs:all>
+							  <xs:element>
+                        <xs:sequence>
+                    <xs:complexType>
+                <xs:element>
+            <xs:sequence>
+        <xs:complexType>
+    <xs:element>
+							<xs:simpleType name="positiveDecimal">
+								<xs:restriction base="xs:decimal">
+									<xs:minExclusive value="0"/>
+									<xs:fractionDigits value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+							<xs:simpleType name="NonEmptyString"> <!-- we can describe our types separately to reuse them later -->
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1" />
+									<xs:pattern value=".*[^\s].*" />
+								</xs:restriction>
+							</xs:simpleType>
+<xs:schema/>

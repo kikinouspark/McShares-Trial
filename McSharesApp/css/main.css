@@ -1,0 +1,55 @@
+﻿div.title {
+    display: flex;
+    align-items: center;
+    background: black;
+    width: 100%;
+    line-height: normal;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: white;
+    margin-left: 20px;
+}
+
+div.content {
+    padding: 20px;
+}
+
+.label, input, button {
+    margin-bottom: 20px;
+}
+
+.customerTbl {
+    width: 96%;
+    margin: 2%;
+    display: flex;
+}
+
+/*.customerTbl table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 50px;
+}
+
+.customerTbl tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.customerTbl tr:hover {
+    background-color: #ddd;
+}
+
+.customerTbl th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #add8e6;
+    color: white;
+}
+
+.cus td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}*/
